@@ -1,0 +1,18 @@
+{
+  "name": "merlin-schema",
+  "version": "0.0.0",
+  "description": "Merlin-ORM's schema implementation",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/tape ./test/*.js | ./node_modules/.bin/tspec"
+  },
+  "author": "Robert Hurst <robertwhurst@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "deep-equal": "^0.2.1"
+  },
+  "devDependencies": {
+    "tape": "^2.12.3",
+    "tap-spec": "^0.1.8"
+  }
+}
