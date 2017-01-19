@@ -1,6 +1,6 @@
 {
   "name": "merlin-schema",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Merlin-ORM's schema implementation",
   "main": "index.js",
   "scripts": {
