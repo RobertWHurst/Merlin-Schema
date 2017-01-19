@@ -1,18 +1,15 @@
 
-var Schema = require('./lib/schema');
-var SchemaRule = require('./lib/schema-rule');
-var SchemaError = require('./lib/schema-error');
+const Schema      = require('./lib/schema');
+const SchemaRule  = require('./lib/schema-rule');
+const SchemaError = require('./lib/schema-error');
 
 // load up the schema types
 require('./lib/types');
 
-exports.create = function(rules) {
-  return new Schema(rules);
-};
-exports.addType = function(Class, opts) {
-  return Schema.addType(Class, opts);
-};
+exports.create = rules => new Schema(rules);
+exports.validate = (rules, record, cb) => new Schema(rules).validate(record, cb);
+exports.addType = (Class, opts) => Schema.addType(Class, opts);
 
-exports.Schema = Schema;
-exports.SchemaRule = SchemaRule;
+exports.Schema      = Schema;
+exports.SchemaRule  = SchemaRule;
 exports.SchemaError = SchemaError;

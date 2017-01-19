@@ -1,10 +1,12 @@
 {
   "name": "merlin-schema",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Merlin-ORM's schema implementation",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/tape ./test/*.js | ./node_modules/.bin/tspec"
+    "lint": "eslint --fix .",
+    "cover": "istanbul cover _mocha -- -R dot ./test/*.spec.js",
+    "test": "mocha ./test/*.spec.js"
   },
   "author": "Robert Hurst <robertwhurst@gmail.com>",
   "license": "MIT",
@@ -12,7 +14,15 @@
     "deep-equal": "^0.2.1"
   },
   "devDependencies": {
-    "tape": "^2.12.3",
-    "tap-spec": "^0.1.8"
-  }
+    "eslint": "^3.13.1",
+    "eslint-config-x2": "^2.0.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.2.0",
+    "pre-commit": "^1.2.2"
+  },
+  "pre-commit": [
+    "lint",
+    "test"
+  ],
+  "repository": "git@github.com:RobertWHurst/Merlin-Schema.git"
 }
